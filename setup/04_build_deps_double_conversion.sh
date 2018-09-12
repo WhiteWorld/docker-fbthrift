@@ -14,5 +14,5 @@ make install
 
 # cleanup
 cd /
-rm -fr /double-conversion
+# rm -fr /double-conversion
 

@@ -14,4 +14,4 @@ make install
 
 # cleanup
 cd /
-rm -fr /mstch
+# rm -fr /mstch

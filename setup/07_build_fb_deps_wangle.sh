@@ -14,5 +14,5 @@ make install
 
 # cleanup
 cd /
-rm -fr /wangle
+# rm -fr /wangle
 

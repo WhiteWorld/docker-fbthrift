@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 #############################################################################
-# build glog
+# Build proxygen
 #############################################################################
-git clone https://github.com/google/glog
-cd glog
-git checkout v0.3.5
-autoreconf -i
-./configure && make && make install
+git clone https://github.com/WhiteWorld/proxygen.git
+cd proxygen
+git checkout v20180108
+cd proxygen
+./deps.sh && ./reinstall.sh
 
 # cleanup
 cd /
-# rm -fr /glog
+# rm -fr proxygen

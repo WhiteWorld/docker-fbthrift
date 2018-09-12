@@ -10,4 +10,4 @@ make install
 
 # cleanup
 cd /
-rm -fr zstd
+# rm -fr zstd

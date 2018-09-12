@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 
 #############################################################################
-# build glog
+# Build fbthrift example
 #############################################################################
-git clone https://github.com/google/glog
-cd glog
-git checkout v0.3.5
-autoreconf -i
-./configure && make && make install
+
+cd fbthrift
+git checkout ljq
+git pull
+echo "29"
+cd thrift/example
+mkdir build
+cd build
+cmake ..
+make
 
 # cleanup
 cd /
-# rm -fr /glog
+# rm -fr fbthrift

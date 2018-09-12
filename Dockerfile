@@ -1,5 +1,42 @@
 FROM ubuntu:16.04
-ADD setup.sh /setup.sh
-RUN /setup.sh
-ENTRYPOINT ["/usr/bin/thrift1"]
+
+ENV FBTHRIFT_VERSION master
+
+ADD setup/00_install_packages.sh /setup/00_install_packages.sh
+RUN /setup/00_install_packages.sh
+
+ADD setup/02_build_deps_glog.sh /setup/02_build_deps_glog.sh
+RUN /setup/02_build_deps_glog.sh
+
+ADD setup/03_build_deps_mstch.sh /setup/03_build_deps_mstch.sh
+RUN /setup/03_build_deps_mstch.sh
+
+ADD setup/04_build_deps_double_conversion.sh /setup/04_build_deps_double_conversion.sh
+RUN /setup/04_build_deps_double_conversion.sh
+
+ADD setup/05_build_deps_gflags.sh /setup/05_build_deps_gflags.sh
+RUN /setup/05_build_deps_gflags.sh
+
+ADD setup/06_build_fb_deps_folly.sh /setup/06_build_fb_deps_folly.sh
+RUN /setup/06_build_fb_deps_folly.sh
+
+ADD setup/07_build_fb_deps_wangle.sh /setup/07_build_fb_deps_wangle.sh
+RUN /setup/07_build_fb_deps_wangle.sh
+
+ADD setup/08_build_fb_deps_zstd.sh /setup/08_build_fb_deps_zstd.sh
+RUN /setup/08_build_fb_deps_zstd.sh
+
+ADD setup/10_build_fbthrift.sh /setup/10_build_fbthrift.sh
+RUN /setup/10_build_fbthrift.sh
+
+ADD setup/11_build_fbthrift_example.sh /setup/11_build_fbthrift_example.sh
+RUN /setup/11_build_fbthrift_example.sh
+
+# ADD setup/11_build_proxygen.sh /setup/11_build_proxygen.sh
+# RUN /setup/11_build_proxygen.sh
+
+# ADD setup/20_cleanup_packages.sh /setup/20_cleanup_packages.sh
+# RUN /setup/20_cleanup_packages.sh
+
+# ENTRYPOINT ["/usr/bin/thrift1"]
 

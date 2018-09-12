@@ -18,7 +18,8 @@ buildDeps=" \
 		make \
 		cmake \
 		pkg-config \
-        git
+        git \
+		vim
 	"
 
 apt-get update

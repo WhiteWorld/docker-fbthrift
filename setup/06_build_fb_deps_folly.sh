@@ -10,10 +10,10 @@ apt-get install -y \
     autoconf-archive \
     libtool \
     libboost-all-dev \
-    libevent-dev \
+    libgflags-dev \
     libdouble-conversion-dev \
     libgoogle-glog-dev \
-    libgflags-dev \
+    libevent-dev \
     liblz4-dev \
     liblzma-dev \
     libsnappy-dev \
@@ -36,5 +36,5 @@ make install
 
 # cleanup
 cd /
-rm -fr /folly
+# rm -fr /folly
 
